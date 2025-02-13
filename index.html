@@ -117,6 +117,20 @@
     <div class="content" id="introduction" style="display: none;">
         <h2>欢迎来到MC1.21.4纯生存世界</h2>
         <p>这是一个自由且有管理有主城的世界，欢迎来到这个世界进行冒险，不可破坏建筑注意！</p>
+        <p>在这里，你可以：</p>
+        <ul>
+            <li>探索无尽的地形，发现隐藏的秘密。</li>
+            <li>建造自己的家园，从简单的木屋到宏伟的城堡。</li>
+            <li>铺设铁轨，建造铁路系统，快速穿梭于不同地点。</li>
+            <li>挖掘矿石，制作工具和武器，提升你的生存能力。</li>
+            <li>与怪物战斗，保护自己和你的基地。</li>
+            <li>种植农作物，养殖动物，建立自己的农场。</li>
+            <li>与其他玩家互动，共同建设一个繁荣的社区。</li>
+            <li>体验各种红石机械和自动化装置，发挥你的创造力。</li>
+            <li>发现和利用各种自然生成的结构，如村庄、沙漠神殿和海底遗迹。</li>
+            <li>享受自由探索的乐趣，每一次游戏都是独一无二的冒险。</li>
+        </ul>
+        <p>在这个世界里，你的想象力是唯一的限制。快来加入我们，开启你的冒险之旅吧！</p>
     </div>
     <script>
         function toggleSidebar() {
@@ -130,18 +144,16 @@
 
         document.addEventListener('click', function(event) {
             const colors = ['#ff0000', '#00ff00', '#0000ff', '#ffff00', '#ff00ff', '#00ffff'];
-            for (let i = 0; i < 3; i++) {
-                const triangle = document.createElement('div');
-                triangle.classList.add('triangle');
-                triangle.style.left = `${event.clientX}px`;
-                triangle.style.top = `${event.clientY}px`;
-                triangle.style.borderBottomColor = colors[Math.floor(Math.random() * colors.length)];
-                document.body.appendChild(triangle);
+            const triangle = document.createElement('div');
+            triangle.classList.add('triangle');
+            triangle.style.left = `${event.clientX}px`;
+            triangle.style.top = `${event.clientY}px`;
+            triangle.style.borderBottomColor = colors[Math.floor(Math.random() * colors.length)];
+            document.body.appendChild(triangle);
 
-                setTimeout(() => {
-                    document.body.removeChild(triangle);
-                }, 2000);
-            }
+            setTimeout(() => {
+                document.body.removeChild(triangle);
+            }, 2000);
         });
     </script>
 </body>
