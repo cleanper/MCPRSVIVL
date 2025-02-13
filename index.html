@@ -89,7 +89,7 @@
             height: 0;
             border-left: 10px solid transparent;
             border-right: 10px solid transparent;
-            border-bottom: 15px solid #ff0000;
+            border-bottom: 15px solid;
             animation: fall 2s forwards;
         }
         @keyframes fall {
@@ -129,16 +129,28 @@
         }
 
         document.addEventListener('click', function(event) {
-            const triangle = document.createElement('div');
-            triangle.classList.add('triangle');
-            triangle.style.left = `${event.clientX}px`;
-            triangle.style.top = `${event.clientY}px`;
-            document.body.appendChild(triangle);
+            for (let i = 0; i < 3; i++) {
+                const triangle = document.createElement('div');
+                triangle.classList.add('triangle');
+                triangle.style.left = `${event.clientX}px`;
+                triangle.style.top = `${event.clientY}px`;
+                triangle.style.borderBottomColor = getRandomColor();
+                document.body.appendChild(triangle);
 
-            setTimeout(() => {
-                document.body.removeChild(triangle);
-            }, 2000);
+                setTimeout(() => {
+                    document.body.removeChild(triangle);
+                }, 2000);
+            }
         });
+
+        function getRandomColor() {
+            const letters = '0123456789ABCDEF';
+            let color = '#';
+            for (let i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }
     </script>
 </body>
 </html>
