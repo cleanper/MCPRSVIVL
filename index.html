@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MC1.21.4纯生存</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #333;
+            color: white;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .hamburger-menu {
+            width: 30px;
+            height: 3px;
+            background: white;
+            position: relative;
+            cursor: pointer;
+        }
+        .hamburger-menu::before,
+        .hamburger-menu::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: white;
+        }
+        .hamburger-menu::before {
+            top: -10px;
+        }
+        .hamburger-menu::after {
+            top: 10px;
+        }
+        .menu {
+            display: none;
+            position: absolute;
+            top: 60px;
+            right: 20px;
+            background: #444;
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+        .menu.active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>MC1.21.4纯生存</h1>
+        <div class="hamburger-menu" onclick="toggleMenu()"></div>
+    </header>
+    <div class="menu" id="menu">
+        <p>这是MC1.21.4纯生存的介绍内容，欢迎来到这个充满挑战与乐趣的世界！</p>
+    </div>
+    <script>
+        function toggleMenu() {
+            document.getElementById('menu').classList.toggle('active');
+        }
+    </script>
+</body>
+</html>
