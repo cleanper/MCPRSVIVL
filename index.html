@@ -74,14 +74,6 @@
             font-size: 16px;
             line-height: 1.6;
         }
-        .content.active {
-            display: block;
-        }
-        .title-link {
-            color: white;
-            text-decoration: none;
-            cursor: pointer;
-        }
         .triangle {
             position: absolute;
             width: 0;
@@ -113,7 +105,7 @@
             <li onclick="showIntroduction()">介绍</li>
         </ul>
     </div>
-    <div class="content" id="introduction" style="display: none;">
+    <div class="content" id="introduction">
         <h2>欢迎来到MC1.21.4纯生存世界</h2>
         <p>这是一个自由且有管理有主城的世界，欢迎来到这个世界进行冒险，注意不要破坏任何建筑！</p>
         <p>在这里，你可以：</p>
@@ -136,7 +128,8 @@
         }
 
         function showIntroduction() {
-            document.getElementById('introduction').style.display = 'block';
+            const introduction = document.getElementById('introduction');
+            introduction.style.display = 'block';
             document.getElementById('sidebar').classList.remove('active');
         }
 
