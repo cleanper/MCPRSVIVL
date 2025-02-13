@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MC1.21.4纯生存</title>
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -73,16 +76,22 @@
         .content.active {
             display: block;
         }
+        .title-link {
+            color: white;
+            text-decoration: none;
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
     <header>
-        <h1>MC1.21.4纯生存</h1>
+        <h1><a href="https://cleanper.github.io/MCPRSVIVL/" class="title-link">MC1.21.4纯生存</a></h1>
         <div class="hamburger-menu" onclick="toggleSidebar()"></div>
     </header>
     <div class="sidebar" id="sidebar">
         <ul>
             <li onclick="showIntroduction()">介绍</li>
+            <!-- 可以在这里添加更多菜单项 -->
         </ul>
     </div>
     <div class="content" id="introduction" style="display: none;">
@@ -96,7 +105,7 @@
 
         function showIntroduction() {
             document.getElementById('introduction').style.display = 'block';
-            document.getElementById('sidebar').classList.remove('active');
+            document.getElementById('sidebar').classList.remove('active'); // 关闭侧边栏
         }
     </script>
 </body>
