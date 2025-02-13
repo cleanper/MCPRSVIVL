@@ -47,20 +47,19 @@
             top: 10px;
         }
         .sidebar {
-            display: none;
             position: fixed;
             top: 0;
-            right: -250px;
+            right: 0;
             width: 250px;
             height: 100%;
             background: #444;
             color: white;
             padding: 20px;
-            transition: right 0.3s ease;
+            transform: translateX(100%);
+            transition: transform 0.3s ease;
         }
         .sidebar.active {
-            display: block;
-            right: 0;
+            transform: translateX(0);
         }
         .sidebar ul {
             list-style: none;
@@ -116,7 +115,7 @@
     </div>
     <div class="content" id="introduction" style="display: none;">
         <h2>欢迎来到MC1.21.4纯生存世界</h2>
-        <p>这是一个自由且有管理有主城的世界，欢迎来到这个世界进行冒险，注意不要破坏任何它人建筑！</p>
+        <p>这是一个自由且有管理有主城的世界，欢迎来到这个世界进行冒险，不可破坏建筑注意！</p>
         <p>在这里，你可以：</p>
         <ul>
             <li>探索广袤的大陆和神秘的地下洞穴</li>
