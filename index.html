@@ -14,6 +14,8 @@
             padding: 0;
             background-color: #f4f4f4;
             color: #333;
+            position: relative;
+            overflow: hidden;
         }
         header {
             background-color: #333;
@@ -81,6 +83,25 @@
             text-decoration: none;
             cursor: pointer;
         }
+        .triangle {
+            position: absolute;
+            width: 0;
+            height: 0;
+            border-left: 10px solid transparent;
+            border-right: 10px solid transparent;
+            border-bottom: 15px solid #ff0000;
+            animation: fall 2s forwards;
+        }
+        @keyframes fall {
+            0% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(100vh);
+                opacity: 0;
+            }
+        }
     </style>
 </head>
 <body>
@@ -91,7 +112,6 @@
     <div class="sidebar" id="sidebar">
         <ul>
             <li onclick="showIntroduction()">介绍</li>
-            <!-- 可以在这里添加更多菜单项 -->
         </ul>
     </div>
     <div class="content" id="introduction" style="display: none;">
@@ -105,8 +125,20 @@
 
         function showIntroduction() {
             document.getElementById('introduction').style.display = 'block';
-            document.getElementById('sidebar').classList.remove('active'); // 关闭侧边栏
+            document.getElementById('sidebar').classList.remove('active');
         }
+
+        document.addEventListener('click', function(event) {
+            const triangle = document.createElement('div');
+            triangle.classList.add('triangle');
+            triangle.style.left = `${event.clientX}px`;
+            triangle.style.top = `${event.clientY}px`;
+            document.body.appendChild(triangle);
+
+            setTimeout(() => {
+                document.body.removeChild(triangle);
+            }, 2000);
+        });
     </script>
 </body>
 </html>
