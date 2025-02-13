@@ -10,6 +10,7 @@
             margin: 0;
             padding: 0;
             background-color: #f4f4f4;
+            color: #333;
         }
         header {
             background-color: #333;
@@ -40,20 +41,36 @@
         .hamburger-menu::after {
             top: 10px;
         }
-        .menu {
+        .sidebar {
             display: none;
-            position: absolute;
-            top: 60px;
-            right: 20px;
+            position: fixed;
+            top: 0;
+            right: -250px;
+            width: 250px;
+            height: 100%;
             background: #444;
             color: white;
-            padding: 10px;
-            border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-            width: 300px;
-            text-align: center;
+            padding: 20px;
+            transition: right 0.3s ease;
         }
-        .menu.active {
+        .sidebar.active {
+            display: block;
+            right: 0;
+        }
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+        }
+        .sidebar ul li {
+            margin-bottom: 10px;
+            cursor: pointer;
+        }
+        .content {
+            padding: 20px;
+            font-size: 16px;
+            line-height: 1.6;
+        }
+        .content.active {
             display: block;
         }
     </style>
@@ -61,14 +78,25 @@
 <body>
     <header>
         <h1>MC1.21.4纯生存</h1>
-        <div class="hamburger-menu" onclick="toggleMenu()"></div>
+        <div class="hamburger-menu" onclick="toggleSidebar()"></div>
     </header>
-    <div class="menu" id="menu">
+    <div class="sidebar" id="sidebar">
+        <ul>
+            <li onclick="showIntroduction()">介绍</li>
+        </ul>
+    </div>
+    <div class="content" id="introduction" style="display: none;">
+        <h2>欢迎来到MC1.21.4纯生存世界</h2>
         <p>这是一个自由且有管理有主城的世界，欢迎来到这个世界进行冒险，不可破坏建筑注意！</p>
     </div>
     <script>
-        function toggleMenu() {
-            document.getElementById('menu').classList.toggle('active');
+        function toggleSidebar() {
+            document.getElementById('sidebar').classList.toggle('active');
+        }
+
+        function showIntroduction() {
+            document.getElementById('introduction').style.display = 'block';
+            document.getElementById('sidebar').classList.remove('active');
         }
     </script>
 </body>
