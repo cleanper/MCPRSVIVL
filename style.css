@@ -23,7 +23,6 @@ header {
     background: white;
     position: relative;
     cursor: pointer;
-    transition: background-color 0.3s ease;
 }
 
 .hamburger-menu::before,
@@ -33,7 +32,6 @@ header {
     width: 100%;
     height: 100%;
     background: white;
-    transition: transform 0.3s ease;
 }
 
 .hamburger-menu::before {
@@ -100,7 +98,7 @@ header {
 
 .robot-check {
     position: fixed;
-    bottom: -50px;
+    bottom: 20px;
     left: 50%;
     transform: translateX(-50%);
     background: white;
@@ -111,7 +109,8 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-    animation: slideIn 5s ease forwards;
+    animation: slideIn 0.5s ease forwards;
+    z-index: 1000;
 }
 
 @keyframes slideIn {
@@ -119,17 +118,9 @@ header {
         bottom: -50px;
         opacity: 0;
     }
-    10% {
-        bottom: 20px;
-        opacity: 1;
-    }
-    90% {
-        bottom: 20px;
-        opacity: 1;
-    }
     100% {
-        bottom: -50px;
-        opacity: 0;
+        bottom: 20px;
+        opacity: 1;
     }
 }
 
@@ -140,7 +131,6 @@ header {
     border-radius: 3px;
     cursor: pointer;
     background-color: #f0f0f0;
-    transition: background-color 0.3s ease;
 }
 
 .robot-check button:hover {
@@ -159,49 +149,8 @@ header {
     background-color: #555;
     color: white;
     cursor: pointer;
-    transition: background-color 0.3s ease;
 }
 
 .lang-btn:hover {
     background-color: #777;
-}
-
-@media (max-width: 768px) {
-    .sidebar {
-        width: 100%;
-        padding: 10px;
-    }
-
-    .content {
-        padding: 10px;
-    }
-
-    .robot-check {
-        width: 90%;
-        padding: 10px;
-    }
-}
-
-button {
-    font-family: Arial, sans-serif;
-    font-size: 14px;
-    font-weight: bold;
-    color: #fff;
-    background: linear-gradient(to right, #ff7e5f, #feb47b);
-    border: none;
-    border-radius: 5px;
-    padding: 8px 16px;
-    cursor: pointer;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-button:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-}
-
-button:active {
-    transform: translateY(0);
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }

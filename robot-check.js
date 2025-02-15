@@ -1,16 +1,19 @@
 function confirmRobotCheck(isHuman) {
     const robotCheck = document.getElementById('robot-check');
     if (isHuman) {
-        robotCheck.style.display = 'none';
-        localStorage.setItem('robotCheck', 'passed');
+        robotCheck.style.animation = 'slideOut 0.5s ease forwards';
     } else {
-        alert('很抱歉，您未能通过验证。');
+        window.location.href = 'https://www.bing.com';
     }
 }
 
-window.onload = () => {
-    const robotCheckPassed = localStorage.getItem('robotCheck') === 'passed';
-    if (!robotCheckPassed) {
-        document.getElementById('robot-check').style.display = 'flex';
+@keyframes slideOut {
+    0% {
+        bottom: 20px;
+        opacity: 1;
     }
-};
+    100% {
+        bottom: -50px;
+        opacity: 0;
+    }
+}

@@ -1,12 +1,7 @@
 function switchLanguage(lang) {
-    const buttons = document.querySelectorAll('.lang-btn');
     if (lang === 'zh') {
-        document.documentElement.lang = 'zh';
-        buttons[0].textContent = '中文';
-        buttons[1].textContent = 'EN';
+        window.location.href = 'zh_cn.html';
     } else if (lang === 'en') {
-        document.documentElement.lang = 'en';
-        buttons[0].textContent = 'EN';
-        buttons[1].textContent = '中文';
+        window.location.href = 'en_us.html';
     }
 }

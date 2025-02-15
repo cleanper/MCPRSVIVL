@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MC1.21.4 Pure Survival WIKI</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+    <script src="language.js" defer></script>
+    <script src="music.js" defer></script>
+    <script src="robot-check.js" defer></script>
+    <script src="triangle.js" defer></script>
+</head>
+<body onload="initializePage()">
+    <header>
+        <h1><a href="index.html" class="title-link">MC1.21.4 Pure Survival WIKI</a></h1>
+        <div class="language-switcher">
+            <button class="lang-btn" onclick="window.location.href='en_us.html'">EN</button>
+            <button class="lang-btn" onclick="window.location.href='zh_cn.html'">中文</button>
+        </div>
+        <div class="hamburger-menu" onclick="toggleSidebar()"></div>
+    </header>
+    <div class="sidebar" id="sidebar">
+        <ul>
+            <li onclick="showContent('introduction')">Introduction</li>
+            <li onclick="showContent('how-to-use')">How to Use</li>
+        </ul>
+    </div>
+    <div class="content" id="introduction">
+        <h2>Welcome to the MC1.21.4 Pure Survival World</h2>
+        <p>This is a free and managed world with a main city. Welcome to explore and have fun, but please do not destroy any buildings!</p>
+        <p>Here, you can:</p>
+        <ul>
+            <li>Explore vast continents and mysterious underground caves</li>
+            <li>Build your own home or a grand castle</li>
+            <li>Collaborate with friends to create a prosperous community</li>
+            <li>Use rails and minecarts to create efficient transportation systems</li>
+            <li>Challenge various monsters to obtain rare resources</li>
+            <li>Farm crops and raise animals for a self-sufficient life</li>
+            <li>Discover hidden treasures and unlock mysterious redstone mechanisms</li>
+            <li>Participate in server events to win rewards</li>
+        </ul>
+        <p>There are many more fun things to discover. Join us now!</p>
+    </div>
+    <div class="content" id="how-to-use" style="display: none;">
+        <h2>How to Use</h2>
+        <h3>Mobile:</h3>
+        <p>Download the FCL launcher, click the third button from the left (down arrow), click "Modpack", select "Install Modpack", choose the downloaded .zip file and confirm. After installation, find the gear icon, set Java version to jre21, enable version isolation, do not enable auto-allocate memory, set memory to 2048MB+, set window resolution to 45%, disable Bedrock touch gestures, run Zink with system Vulkan driver, install LTW plugin for renderer, select ltw renderer, and finally click Pojav to start the game!</p>
+        <h3>PC:</h3>
+        <p>Drag the .zip modpack into pcl2 or hmcl2, install Java 21, enable version isolation, set memory to 2048MB+, select the modpack and click "Start Game" to play!</p>
+    </div>
+    <audio id="background-music" loop>
+        <source src="background-music.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    <div class="robot-check" id="robot-check">
+        <p>Are you not a robot?</p>
+        <button onclick="confirmRobotCheck(true)">Yes</button>
+        <button onclick="confirmRobotCheck(false)">No</button>
+    </div>
+</body>
+</html>
