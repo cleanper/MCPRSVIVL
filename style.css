@@ -124,6 +124,17 @@ header {
     }
 }
 
+@keyframes slideOut {
+    0% {
+        bottom: 20px;
+        opacity: 1;
+    }
+    100% {
+        bottom: -50px;
+        opacity: 0;
+    }
+}
+
 .robot-check button {
     margin: 0 10px;
     padding: 5px 10px;

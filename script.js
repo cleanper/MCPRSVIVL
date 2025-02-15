@@ -15,3 +15,11 @@ function showContent(sectionId) {
     }
     document.getElementById('sidebar').classList.remove('active');
 }
+
+document.addEventListener('click', (event) => {
+    const sidebar = document.getElementById('sidebar');
+    const hamburgerMenu = document.querySelector('.hamburger-menu');
+    if (!sidebar.contains(event.target) && !hamburgerMenu.contains(event.target)) {
+        sidebar.classList.remove('active');
+    }
+});
