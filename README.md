@@ -1,2 +1,0 @@
-# MCPRSVIVL
-puresurvival

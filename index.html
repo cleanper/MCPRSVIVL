@@ -1,34 +1,62 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MC1.21.4纯生存WIKI</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+    <script src="language.js" defer></script>
+    <script src="music.js" defer></script>
+    <script src="robot-check.js" defer></script>
+    <script src="triangle.js" defer></script>
 </head>
-<body onload="showIntroduction(); playMusic();">
+<body onload="initializePage()">
     <header>
-        <h1><a href="https://cleanper.github.io/MCPRSVIVL/">MC1.21.4纯生存WIKI</a></h1>
-        <div class="hamburger-menu-container" onclick="toggleSidebar()">
-            <div class="hamburger-menu"></div>
+        <h1><a href="index.html" class="title-link">MC1.21.4纯生存WIKI</a></h1>
+        <div class="hamburger-menu" onclick="toggleSidebar()"></div>
+        <div class="language-switcher">
+            <button class="lang-btn" onclick="switchLanguage('zh')">中文</button>
+            <button class="lang-btn" onclick="switchLanguage('en')">EN</button>
         </div>
     </header>
     <div class="sidebar" id="sidebar">
         <ul>
-            <li onclick="loadContent('introduction')">介绍</li>
-            <li onclick="loadContent('how-to-use')">如何使用</li>
+            <li onclick="showContent('introduction')">介绍</li>
+            <li onclick="showContent('how-to-use')">如何使用</li>
         </ul>
     </div>
-    <div class="content" id="content"></div>
+    <div class="content" id="introduction">
+        <h2>欢迎来到MC1.21.4纯生存世界</h2>
+        <p>这是一个自由且有管理有主城的世界，欢迎来到这个世界进行冒险，注意不要破坏任何建筑！</p>
+        <p>在这里，你可以：</p>
+        <ul>
+            <li>探索广袤的大陆和神秘的地下洞穴</li>
+            <li>建造属于自己的家园或宏伟的城堡</li>
+            <li>与朋友一起合作，共同建立一个繁荣的社区</li>
+            <li>利用铁轨和矿车打造高效的运输系统</li>
+            <li>挑战各种怪物，获取稀有资源</li>
+            <li>种植农作物，养殖动物，体验自给自足的生活</li>
+            <li>发现隐藏的宝藏，解锁神秘的红石机械</li>
+            <li>参加服务器活动，赢取奖励</li>
+        </ul>
+        <p>更多好玩的内容等你来发现，快来加入我们吧！</p>
+    </div>
+    <div class="content" id="how-to-use" style="display: none;">
+        <h2>如何使用</h2>
+        <h3>手机：</h3>
+        <p>下载FCL启动器，点击左边第三个往下箭头的按钮，点击整合包，选择安装整合包，选择下载的整合包.zip文件再点击确认。安装完成之后找到齿轮图标，Java版本为jre21，版本隔离开启，不开启自动分配内存，内存2048mb+，窗口分辨率45%，关闭基岩版触控手势，运行Zink使用系统Vulkan驱动打开，渲染器安装LTW插件再选择ltw渲染器，最后点击Pojav进入游戏！</p>
+        <h3>电脑：</h3>
+        <p>.zip整合包拖入pcl2或hmcl2，安装完Java21版本隔离开启，内存2048+之后选择这个整合包点击开始游戏进行游戏！</p>
+    </div>
     <audio id="background-music" loop>
-        <source src="music.mp3" type="audio/mpeg">
+        <source src="background-music.mp3" type="audio/mpeg">
         Your browser does not support the audio element.
     </audio>
-    <div class="robot-check" id="robot-check">
+    <div class="robot-check" id="robot-check" style="display: none;">
         <p>您不是机器人吗？</p>
         <button onclick="confirmRobotCheck(true)">是</button>
         <button onclick="confirmRobotCheck(false)">否</button>
     </div>
-    <script src="scripts.js"></script>
 </body>
 </html>
