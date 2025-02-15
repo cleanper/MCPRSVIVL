@@ -10,7 +10,6 @@
     <script src="music.js" defer></script>
     <script src="robot-check.js" defer></script>
     <script src="triangle.js" defer></script>
-    <script src="comments.js" defer></script>
 </head>
 <body onload="initializePage()">
     <header>
@@ -54,12 +53,14 @@
     <div class="content" id="comments" style="display: none;">
         <h2>Player Comments</h2>
         <div id="comments-list"></div>
-        <div class="comment-form">
-            <input type="text" id="username" placeholder="Enter your username">
-            <textarea id="comment" placeholder="Enter your comment"></textarea>
-            <button onclick="submitComment()">Submit</button>
-            <button onclick="cancelComment()">Cancel</button>
-        </div>
+        <script src="https://utteranc.es/client.js"
+                repo="cleanper/MCPRSVIVL"
+                issue-term="pathname"
+                label="comments"
+                theme="github-light"
+                crossorigin="anonymous"
+                async>
+        </script>
     </div>
     <audio id="background-music" loop>
         <source src="background-music.mp3" type="audio/mpeg">
