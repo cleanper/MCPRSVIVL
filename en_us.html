@@ -10,6 +10,7 @@
     <script src="music.js" defer></script>
     <script src="robot-check.js" defer></script>
     <script src="triangle.js" defer></script>
+    <script src="comments.js" defer></script>
 </head>
 <body onload="initializePage()">
     <header>
@@ -24,6 +25,7 @@
         <ul>
             <li onclick="showContent('introduction')">Introduction</li>
             <li onclick="showContent('how-to-use')">How to Use</li>
+            <li onclick="showComments()">Comments</li>
         </ul>
     </div>
     <div class="content" id="introduction">
@@ -48,6 +50,16 @@
         <p>Download the FCL launcher, click the third button from the left (down arrow), click "Modpack", select "Install Modpack", choose the downloaded .zip file and confirm. After installation, find the gear icon, set Java version to jre21, enable version isolation, do not enable auto-allocate memory, set memory to 2048MB+, set window resolution to 45%, disable Bedrock touch gestures, run Zink with system Vulkan driver, install LTW plugin for renderer, select ltw renderer, and finally click Pojav to start the game!</p>
         <h3>PC:</h3>
         <p>Drag the .zip modpack into pcl2 or hmcl2, install Java 21, enable version isolation, set memory to 2048MB+, select the modpack and click "Start Game" to play!</p>
+    </div>
+    <div class="content" id="comments" style="display: none;">
+        <h2>Player Comments</h2>
+        <div id="comments-list"></div>
+        <div class="comment-form">
+            <input type="text" id="username" placeholder="Enter your username">
+            <textarea id="comment" placeholder="Enter your comment"></textarea>
+            <button onclick="submitComment()">Submit</button>
+            <button onclick="cancelComment()">Cancel</button>
+        </div>
     </div>
     <audio id="background-music" loop>
         <source src="background-music.mp3" type="audio/mpeg">
